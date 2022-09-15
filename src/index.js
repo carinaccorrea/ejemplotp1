@@ -2,7 +2,7 @@
 
 const express = require('express'); // importa express
 const globalConstants= require('./const/globalConstants'); // importa seteos globales
-const routerConfig=require('./routes/indexRutasUsu') //importa rutas
+const routerConfig=require('./routes/indexRutas') //importa rutas
 
 const configuracionApi=(app) => {
     app.use(express.json()); // permite que express entienda json
