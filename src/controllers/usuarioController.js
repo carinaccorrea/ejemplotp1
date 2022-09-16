@@ -3,7 +3,7 @@ const errors = require("../const/errors");
 
 module.exports={
 
-listar:async (req,res)=>{
+listar:async (req,res, next)=>{
     console.log('ejecutando listar usuarios en consola.');
     try {
         const users = await models.usuario.findAll()
@@ -20,7 +20,7 @@ listar:async (req,res)=>{
     }
     
 },
-listarInfo:async (req,res)=>{
+listarInfo:async (req,res,next)=>{
     
     console.log('ejecutando listar un usuario en consola.');   
     try {
@@ -43,7 +43,7 @@ listarInfo:async (req,res)=>{
         return next(err)
     }
 },
-crear:async (req,res)=>{
+crear:async (req,res,next)=>{
     console.log('ejecutando crear usuario en consola.');
     
     try {
