@@ -1,4 +1,5 @@
 const models = require("../database/models/index");
+const errors = require("../const/errors");
 
 module.exports={
 
@@ -28,6 +29,8 @@ listarInfo:async (req,res)=>{
                 id: req.params.id
             }
         })            
+
+        if(!user) return next(errors.UsuarioInexistente)
 
         res.json({
             success: true,
