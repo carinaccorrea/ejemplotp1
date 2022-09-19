@@ -6,7 +6,7 @@ module.exports={
 listar:async (req,res, next)=>{
     console.log('ejecutando listar MEDICOS en consola.');
     try {
-        const obj = await models.medicos.findAll()
+        const obj = await models.medico.findAll()
 
         res.json({
             success: true,
@@ -24,7 +24,7 @@ listarInfo:async (req,res,next)=>{
     
     console.log('ejecutando listar un MEDICO en consola.');   
     try {
-        const obj = await models.medicos.findOne({
+        const obj = await models.medico.findOne({
             where: {
                 id: req.params.id
             }
@@ -47,7 +47,7 @@ crear:async (req,res,next)=>{
     console.log('ejecutando crear MEDICO en consola.');
     
     try {
-        const obj = await models.medicos.create(req.body)
+        const obj = await models.medico.create(req.body)
 
         res.json({
             success: true,
