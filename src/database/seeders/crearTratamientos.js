@@ -15,7 +15,7 @@ module.exports = {
                     titulo: "analisis de sangre",
                     descripcion: "detalle del analisis de sangre",
                     observacion: "observa",
-                    idPaciente: 1;
+                    idPaciente: 1,
                     idMedicoSolicitante:2,
                     idMedico:3
                 }
@@ -28,7 +28,7 @@ module.exports = {
                     titulo: "examen oftalmologico",
                     descripcion: "chequeo de la vision",
                     observacion: "observab",
-                    idPaciente: 2;
+                    idPaciente: 2,
                     idMedicoSolicitante:2,
                     idMedico:5
                 }
@@ -42,7 +42,7 @@ module.exports = {
                     titulo: "derrame ocular",
                     descripcion: "se procede a operar",
                     observacion: "exito",
-                    idPaciente: 1;
+                    idPaciente: 1,
                     idMedicoSolicitante:2,
                     idMedico:6
                 }

@@ -12,9 +12,9 @@ module.exports = {
                     id: "1"
                 },
                 defaults: {
-                    idPaciente: "1",
-                    idMedico: "1",
-                    idMutual: "1"                  
+                    idPaciente: 1,
+                    idMedico: 1,
+                    idMutual: 1                  
                 }
             }),
             models.turno.findOrCreate({
@@ -22,9 +22,9 @@ module.exports = {
                     id: "2"
                 },
                 defaults: {
-                    idPaciente: "1",
-                    idMedico: "2",
-                    idMutual: "1"                  
+                    idPaciente: 1,
+                    idMedico: 2,
+                    idMutual: 1                  
                 }
             }),
             
@@ -33,9 +33,9 @@ module.exports = {
                     id: "3"
                 },
                 defaults: {
-                    idPaciente: "2",
-                    idMedico: "5",
-                    idMutual: "2"                  
+                    idPaciente: 2,
+                    idMedico: 5,
+                    idMutual: 2                  
 
                 }
             }),
@@ -44,9 +44,9 @@ module.exports = {
                     id: "4"
                 },
                 defaults: {
-                    idPaciente: "3",
-                    idMedico: "3",
-                    idMutual: "1"                  
+                    idPaciente: 3,
+                    idMedico: 3,
+                    idMutual: 1                  
 
                 }
             })

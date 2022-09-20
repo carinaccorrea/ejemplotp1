@@ -16,8 +16,8 @@ module.exports = {
                     apellido: "aaaa",
                     email: "emailA@email.com",
                     edad: 25,
-                    idMutual:"1",
-                    codMutual:"21535"
+                    idMutual:1,
+                    codMutual:2134
                 }
             }),
             models.paciente.findOrCreate({
@@ -29,8 +29,8 @@ module.exports = {
                     apellido: "bbb",
                     email: "emailB@email.com",
                     edad: 54,
-                    idMutual:"2",
-                    codMutual:"215555435"
+                    idMutual:2,
+                    codMutual:435
                 }
             }),
             
@@ -43,8 +43,8 @@ module.exports = {
                     apellido: "ccc",
                     email: "emailC@email.com",
                     edad: 18,
-                    idMutual:"3",
-                    codMutual:"145556668"
+                    idMutual:3,
+                    codMutual:1845
                 }
             })
         ])

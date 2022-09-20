@@ -15,7 +15,7 @@ module.exports = {
                     nombre: "IOMA"                    
                 }
             }),
-            models.turno.findOrCreate({
+            models.mutual.findOrCreate({
                 where: {
                     id: "2"
                 },
@@ -24,7 +24,7 @@ module.exports = {
                 }
             }),
             
-            models.turno.findOrCreate({
+            models.mutual.findOrCreate({
                 where: {
                     id: "3"
                 },
@@ -33,7 +33,7 @@ module.exports = {
 
                 }
             }),
-            models.turno.findOrCreate({
+            models.mutual.findOrCreate({
                 where: {
                     id: "4"
                 },
