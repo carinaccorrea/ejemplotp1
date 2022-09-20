@@ -46,6 +46,20 @@ module.exports = {
                     idMutual:3,
                     codMutual:1845
                 }
+            }),
+
+            models.paciente.findOrCreate({
+                where: {
+                    id: "4"
+                },
+                defaults: {
+                    nombre: "dd",
+                    apellido: "ddd",
+                    email: "emailD@email.com",
+                    edad: 25,
+                    idMutual:3,
+                    codMutual:1811
+                }
             })
         ])
     },

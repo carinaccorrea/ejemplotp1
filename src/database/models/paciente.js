@@ -23,7 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     edad: {
       type: DataTypes.INTEGER,
     },
-    
+    idMutual: {
+      type: DataTypes.BIGINT,
+    },
+    codMutual: {
+      type: DataTypes.BIGINT,
+    },
 
     createdAt: { 
       type: DataTypes.DATE, 
