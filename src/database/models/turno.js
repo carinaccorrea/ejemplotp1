@@ -18,9 +18,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     idMutual: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.BIGINT
     },
-    
+    fechaTurno:{
+      type:DataTypes.DATE
+    },
 
     createdAt: { 
       type: DataTypes.DATE, 

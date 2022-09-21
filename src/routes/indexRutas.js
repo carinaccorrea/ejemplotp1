@@ -4,6 +4,8 @@ const usuarioRouters= require('./usuarioRouters.js')
 const medicoRouters= require('./medicoRouters.js')
 const pacienteRouters= require('./pacienteRouters.js')
 const tratamientoRouters= require('./tratamientoRouters.js')
+const turnoRouters= require('./turnoRouters.js')
+const mutualRouters= require('./mutualRouters.js')
 
 const rutas_init =() =>{
   const router =Router()
@@ -11,6 +13,8 @@ const rutas_init =() =>{
   router.use('/medicos',medicoRouters)
   router.use('/pacientes',pacienteRouters)
   router.use('/tratamientos',tratamientoRouters)
+  router.use('/turnos',turnoRouters)
+  router.use('/mutuales',mutualRouters)
 
   return router
 }

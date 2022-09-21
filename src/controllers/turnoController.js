@@ -4,14 +4,14 @@ const errors = require("../const/errors");
 module.exports={
 
 listar:async (req,res,next)=>{
-    console.log('ejecutando listar pacientes en consola.');
+    console.log('ejecutando listar turnos en consola.');
     try {
-        const obj = await models.paciente.findAll()
+        const obj = await models.turno.findAll()
 
         res.json({
             success: true,
             data: {
-                pacientes: obj
+                turnos: obj
             }
         })
 
@@ -21,9 +21,9 @@ listar:async (req,res,next)=>{
     
 },
 crear:async (req,res,next)=>{
-    console.log('ejecutando crear UN PACIENTE en consola.');
+    console.log('ejecutando crear UN turno en consola.');
     try {
-        const obj = await models.paciente.create(req.body)
+        const obj = await models.turno.create(req.body)
 
         res.json({
             success: true,
@@ -38,15 +38,15 @@ crear:async (req,res,next)=>{
     
 },
 listarInfo:async (req,res,next)=>{
-    console.log('ejecutando listar un PACIENTE en consola.');
+    console.log('ejecutando listar un turno en consola.');
     try {
-        const obj = await models.paciente.findOne({
+        const obj = await models.turno.findOne({
             where: {
                 id: req.params.id
             }
         })            
 
-        if(!obj) return next(errors.PacienteInexistente)
+        if(!obj) return next(errors.TurnoInexistente)
 
         const mut = await models.mutual.findOne({
             where: {
@@ -58,7 +58,7 @@ listarInfo:async (req,res,next)=>{
             success: true,
             data: {
                 mutual: mut.nombre,
-                paciente: obj
+                turno: obj
             }
         })
 
@@ -70,8 +70,8 @@ listarInfo:async (req,res,next)=>{
 
 prueba:async (req,res)=>{
     try{
-       console.log('ejecutando prueba PACIENTES en consola.');
-       res.json({ message: 'Hola mundo PACIENTES' });
+       console.log('ejecutando prueba turnos en consola.');
+       res.json({ message: 'Hola mundo turnos' });
        
     
     }catch(err){

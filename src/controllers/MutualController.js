@@ -4,14 +4,14 @@ const errors = require("../const/errors");
 module.exports={
 
 listar:async (req,res,next)=>{
-    console.log('ejecutando listar pacientes en consola.');
+    console.log('ejecutando listar mutuales en consola.');
     try {
-        const obj = await models.paciente.findAll()
+        const muts = await models.mutual.findAll()
 
         res.json({
             success: true,
             data: {
-                pacientes: obj
+                mutuales: muts
             }
         })
 
@@ -21,9 +21,9 @@ listar:async (req,res,next)=>{
     
 },
 crear:async (req,res,next)=>{
-    console.log('ejecutando crear UN PACIENTE en consola.');
+    console.log('ejecutando crear UNA mutual en consola.');
     try {
-        const obj = await models.paciente.create(req.body)
+        const obj = await models.mutual.create(req.body)
 
         res.json({
             success: true,
@@ -38,27 +38,20 @@ crear:async (req,res,next)=>{
     
 },
 listarInfo:async (req,res,next)=>{
-    console.log('ejecutando listar un PACIENTE en consola.');
+    console.log('ejecutando listar una mutual en consola.');
     try {
-        const obj = await models.paciente.findOne({
+        const mut = await models.mutual.findOne({
             where: {
                 id: req.params.id
             }
         })            
 
-        if(!obj) return next(errors.PacienteInexistente)
-
-        const mut = await models.mutual.findOne({
-            where: {
-                id: obj.idMutual
-            }
-        })            
+        if(!mut) return next(errors.MutualInexistente)
 
         res.json({
             success: true,
             data: {
-                mutual: mut.nombre,
-                paciente: obj
+                MUTUAL: mut
             }
         })
 
@@ -70,8 +63,8 @@ listarInfo:async (req,res,next)=>{
 
 prueba:async (req,res)=>{
     try{
-       console.log('ejecutando prueba PACIENTES en consola.');
-       res.json({ message: 'Hola mundo PACIENTES' });
+       console.log('ejecutando prueba mutuales en consola.');
+       res.json({ message: 'Hola mundo mutuales' });
        
     
     }catch(err){

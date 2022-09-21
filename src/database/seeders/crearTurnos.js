@@ -9,12 +9,12 @@ module.exports = {
         return Promise.all([
             models.turno.findOrCreate({
                 where: {
-                    id: "1"
+                    id: "5"
                 },
                 defaults: {
                     idPaciente: 1,
                     idMedico: 1,
-                    idMutual: 1                  
+                    idMutual: 1                                   
                 }
             }),
             models.turno.findOrCreate({
@@ -24,7 +24,8 @@ module.exports = {
                 defaults: {
                     idPaciente: 1,
                     idMedico: 2,
-                    idMutual: 1                  
+                    idMutual: 1 
+                                    
                 }
             }),
             
@@ -35,7 +36,7 @@ module.exports = {
                 defaults: {
                     idPaciente: 2,
                     idMedico: 5,
-                    idMutual: 2                  
+                    idMutual: 2                
 
                 }
             }),
@@ -46,8 +47,7 @@ module.exports = {
                 defaults: {
                     idPaciente: 3,
                     idMedico: 3,
-                    idMutual: 1                  
-
+                    idMutual: 1 
                 }
             })
         ])

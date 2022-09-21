@@ -15,6 +15,21 @@ module.exports = {
     'MedicoInexistente': {
         code: 1002,
         message: 'El medico no existe'
+    },
+    'PacienteInexistente': {
+        code: 1002,
+        message: 'El paciente no existe'
+    },
+    'TurnoInexistente': {
+        code: 1002,
+        message: 'El turno no existe'
+    },
+    'TratamientoInexistente': {
+        code: 1002,
+        message: 'El tratamiento no existe'
+    },
+    'MutualInexistente': {
+        code: 1002,
+        message: 'La mutual no existe'
     }
-
 }
