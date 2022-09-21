@@ -48,18 +48,51 @@ listarInfo:async (req,res,next)=>{
 
         if(!obj) return next(errors.TratamientoInexistente)
 
+         
+        nombrePaciente=obj.idPaciente;
+        nombreMedicSolic=obj.idMedicoSolicitante;
+        nombreMedico=obj.idMedico;
+        nombreMut="sin mutual";
+
+        //se obtiene info mutual
         const mut = await models.mutual.findOne({
             where: {
                 id: obj.idMutual
             }
         })            
-        
-        const nombreMut="";
-        if(!mut) nombreMut=mut.nombre
+        if(mut) nombreMut=mut.nombre
 
+        // se obtiene info del paciente
+        const unPaciente = await models.paciente.findOne({
+            where: {
+                id: obj.idPaciente
+            }
+        })            
+        if(unPaciente) nombrePaciente=unPaciente.nombre
+        
+        
+        //se obtiene medico solicita el tratamiento
+        const unMedicoS = await models.medico.findOne({
+            where: {
+                id: obj.idMedicoSolicitante
+            }
+        })            
+        if(unMedicoS) nombreMedicSolic=unMedicoS.nombre
+
+        //se obtiene medico q hace tratamiento
+        const unMedico = await models.medico.findOne({
+            where: {
+                id: obj.idMedico
+            }
+        })            
+        if(unMedico) nombreMedico=unMedico.nombre
+       
         res.json({
             success: true,
             data: {
+                PACIENTE: nombrePaciente,
+                MEDICO:nombreMedicSolic,
+                PROFESIONAL:nombreMedico,
                 MUTUAL:nombreMut,
                 tratamiento: obj
             }

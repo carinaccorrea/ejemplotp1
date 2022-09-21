@@ -54,10 +54,13 @@ listarInfo:async (req,res,next)=>{
             }
         })            
 
+        nombreMut="sin mutual";
+        if(mut) nombreMut=mut.nombre
+
         res.json({
             success: true,
             data: {
-                mutual: mut.nombre,
+                MUTUAL:nombreMut,
                 paciente: obj
             }
         })

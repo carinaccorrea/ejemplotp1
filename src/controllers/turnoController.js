@@ -52,12 +52,14 @@ listarInfo:async (req,res,next)=>{
             where: {
                 id: obj.idMutual
             }
-        })            
+        })   
+        nombreMut="sin mutual";
+        if(mut) nombreMut=mut.nombre
 
         res.json({
             success: true,
             data: {
-                mutual: mut.nombre,
+                MUTUAL:nombreMut,
                 turno: obj
             }
         })
