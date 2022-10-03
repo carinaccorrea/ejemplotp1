@@ -43,24 +43,35 @@ listarInfo:async (req,res,next)=>{
         const obj = await models.paciente.findOne({
             where: {
                 id: req.params.id
-            }
-        })            
+            },
+            include: [{
+                model: models.paciente_medico,
+                include: [{
+                    model: models.medico
+                }]
+            }]
+        })
 
+        /////
         if(!obj) return next(errors.PacienteInexistente)
 
-        const mut = await models.mutual.findOne({
+        /**
+         * include: [{
+                model: models.mutual                
+            }],
+         */
+        /*const mut = await models.mutual.findOne({
             where: {
                 id: obj.idMutual
             }
-        })            
+        })       
 
         nombreMut="sin mutual";
         if(mut) nombreMut=mut.nombre
-
+*/
         res.json({
             success: true,
-            data: {
-                MUTUAL:nombreMut,
+            data: {                
                 paciente: obj
             }
         })
