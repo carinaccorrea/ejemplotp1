@@ -43,11 +43,13 @@ listarInfo:async (req,res,next)=>{
         return next(err)
     }
 },
-crear:async (req,res,next)=>{
-    console.log('ejecutando crear usuario en consola.');
-    
+crear: async (req, res, next) => {
     try {
         const user = await models.usuario.create(req.body)
+
+        // encriptar contraseña con bcrypt
+        user.password = user.cryptPassword(user.password) 
+        await user.save() // guardo el usuario
 
         res.json({
             success: true,
